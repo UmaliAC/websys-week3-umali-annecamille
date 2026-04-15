@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne Camille | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* 1. APPLY BOX-SIZING GLOBALLY */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Updated Slate & Steel Palette */
+            --primary: #27374D;
+            --accent: #526D82;
+            --bg: #DDE6ED;
+            --text: #2c2c2c;
+            --white: #ffffff;
+            --border-color: #9DB2BF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            text-align: center;
+            line-height: 1.8; /* Improved Typography Spacing */
+        }
+
+        /* Header & Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a1c20);
+            color: white;
+            padding: 80px 20px; /* Increased Padding */
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin-bottom: 10px; /* Margin for spacing */
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation - Improved Spacing */
+        nav {
+            margin: -25px 0 40px; /* Margin between nav and sections */
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 5px 10px; /* Margin between nav links */
+            padding: 12px 25px; /* Improved Navigation Padding */
+            border-radius: 30px;
+            background-color: var(--white);
+            color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 1px solid transparent; 
+        }
+
+        nav a:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Section Styling - Box Model Focus */
+        section {
+            display: none;
+            background-color: var(--white);
+            margin: 30px auto; /* Margin between sections */
+            padding: 50px; /* Added Padding to sections for readability */
+            width: 85%;
+            max-width: 750px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color); /* Added Border for structure */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 25px; /* Margin for visual hierarchy */
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto; /* Margin for spacing under heading */
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px; /* Improved Paragraph Spacing */
+        }
+
+        /* List Styling - Box Model Focus */
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+            margin: 15px 0; /* Margin around lists */
+            padding-left: 20px; /* Padding for list indentation */
+        }
+
+        li {
+            margin-bottom: 12px; /* Margin between list items */
+        }
+
+        /* Image Box Model */
+        img {
+            display: block;
+            margin: 25px auto; /* Margin around image */
+            padding: 5px; /* Padding inside the border */
+            border-radius: 50%;
+            border: 3px solid var(--border-color); /* Added border */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px; /* Increased top margin */
+            padding: 30px; /* Footer padding */
+            font-size: 0.9rem;
+            color: var(--accent);
+            border-top: 1px solid var(--border-color);
+        }
+
+        a { color: var(--accent); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Anne Camille L. Umali</h1>
+    <p>IT Student & Aspiring Tech Specialist</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('hobbies')">Hobbies</a>
+    <a href="#" onclick="showSection('websites')">Favorites</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="home" class="active">
+    <h2>Welcome!</h2>
+    <p>Hi there! Thanks for stopping by. I'm building this space to share my journey in the world of technology and design. Explore the tabs above to get to know me better!</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <img src="profilepic.jpg" width="180" height="180" alt="Profile Picture">
+    <p>I am a 2nd-year IT student at <strong>NU Manila</strong>. I'm passionate about bridging the gap between complex technology and everyday users. I love diving into how systems work and finding creative ways to solve digital problems.</p>
+</section>
+
+<section id="hobbies">
+    <h2>My Hobbies</h2>
+    <ul>
+        <li><strong>Gaming:</strong> Valorant, Roblox, and Minecraft.</li>
+        <li><strong>Entertainment:</strong> Watching movies (basically anything as long as it isn't horror!)</li>
+        <li><strong>Music:</strong> Big fan of Bruno Mars and Maroon 5.</li>
+        <li><strong>Discovery:</strong> Learning about new tech and exploring digital trends.</li>
+    </ul>
+</section>
+
+<section id="websites">
+    <h2>Favorite Spots</h2>
+    <p>Where you can usually find me online:</p>
+    <ol>
+        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+        <li><a href="https://www.tiktok.com" target="_blank">Tiktok</a></li>
+        <li><a href="https://www.netflix.com" target="_blank">Netflix</a></li>
+    </ol>
+</section>
+
+<section id="contact">
+    <h2>Let's Connect</h2>
+    <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+    <p>📧 <strong>Personal:</strong> acumali205@gmail.com</p>
+    <p>🎓 <strong>Academic:</strong> umalial@students.national-u.edu.ph</p>
+</section>
+
+<footer>
+    <p>© 2026 Anne Camille L. Umali • Made with passion & code</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+        
+        window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
